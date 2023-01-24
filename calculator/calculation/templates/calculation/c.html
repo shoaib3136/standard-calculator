@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+    <head>
+        <title>My Standard-Calculator</title>
+        <style type="text/css">
+        .calc{
+            width:500px;
+            height:300;
+            margin-left:auto;
+            margin-right:auto;
+
+        }
+        #result{
+            background-color:gray;
+            text-align:right;
+        }
+        .calc_title{
+            
+        }
+        </style>
+        <script type="text/javascript">
+        function calculate(args)
+        {
+            res = document.getElementById("result")
+            expression = res.innerText;
+            cmd = args.srcElement.innerText;
+            if (cmd == "=")
+            {
+                expression = ""+eval(expression);
+            }
+            else if(cmd ==" C"){
+                expression="";
+            }
+            else{
+               expression = expression +cmd;
+            }
+            res.innerText = expression;
+            // alert("clicked")
+
+        }
+        </script>
+    </head>
+    <body>
+        <div class="calc">
+            <div class="calc_title">
+               <h1>STANDARD CALCULATOR</h1>
+            </div>
+        <div id="result">0</div>
+        <div>
+         <button onclick="calculate(event);">0</button>
+         <button onclick="calculate(event);">1</button>
+         <button onclick="calculate(event);">2</button>
+         <button onclick="calculate(event);">+</button>
+        </div>
+        <div>
+         <button onclick="calculate(event);">=</button>
+         <button onclick="calculate(event);">C</button>
+        </div>
+    </body>
+</html>
